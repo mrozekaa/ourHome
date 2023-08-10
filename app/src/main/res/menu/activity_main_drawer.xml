@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="@string/menu_home" />
+    </group>
+
+    <item android:title="@string/menu_group_map">
+        <menu>
+            <item
+                android:id="@+id/nav_emapa"
+                android:icon="@android:drawable/ic_menu_mapmode"
+                android:title="@string/menu_emapa" />
+            <item
+                android:id="@+id/nav_geoportal"
+                android:icon="@android:drawable/ic_menu_mapmode"
+                android:title="@string/menu_geoportal" />
+        </menu>
+    </item>
+    <item android:title="@string/menu_group_doc">
+        <menu>
+            <item
+                android:id="@+id/nav_mpzp"
+                android:icon="@android:drawable/ic_dialog_info"
+                android:title="@string/menu_mpzp" />
+            <item
+                android:id="@+id/nav_land_register"
+                android:icon="@android:drawable/ic_dialog_info"
+                android:title="@string/menu_land_register" />
+        </menu>
+    </item>
+    <item android:title="@string/menu_group_developers">
+        <menu>
+            <item
+                android:id="@+id/nav_przytulny3"
+                android:icon="@android:drawable/ic_menu_call"
+                android:title="@string/menu_przytulny3" />
+            <item
+                android:id="@+id/nav_zimmermannhaus"
+                android:icon="@android:drawable/ic_menu_call"
+                android:title="@string/menu_zimmermannhaus" />
+            <item
+                android:id="@+id/nav_samborrex"
+                android:icon="@android:drawable/ic_menu_call"
+                android:title="@string/menu_samborrex" />
+        </menu>
+    </item>
+    <item android:title="@string/menu_group_project">
+        <menu>
+            <item
+                android:id="@+id/nav_z500"
+                android:icon="@android:drawable/ic_menu_edit"
+                android:title="@string/menu_z500" />
+            <item
+                android:id="@+id/nav_extra_dom"
+                android:icon="@android:drawable/ic_menu_edit"
+                android:title="@string/menu_extra_dom" />
+            <item
+                android:id="@+id/nav_archon"
+                android:icon="@android:drawable/ic_menu_edit"
+                android:title="@string/menu_archon" />
+            <item
+                android:id="@+id/nav_archeton"
+                android:icon="@android:drawable/ic_menu_edit"
+                android:title="@string/menu_archeton" />
+            <item
+                android:id="@+id/nav_murator"
+                android:icon="@android:drawable/ic_menu_edit"
+                android:title="@string/menu_murator" />
+        </menu>
+    </item>
+    <item android:title="@string/menu_group_else">
+        <menu>
+            <item
+                android:id="@+id/nav_contacts"
+                android:icon="@android:drawable/ic_menu_crop"
+                android:title="@string/menu_contacts" />
+            <item
+                android:id="@+id/nav_notes"
+                android:icon="@android:drawable/ic_menu_crop"
+                android:title="@string/menu_notes" />
+            </menu>
+    </item>
+</menu>

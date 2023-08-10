@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.mrozeka.naszdom.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_emapa"
+        android:name="com.mrozeka.naszdom.ui.webview.WebViewFragment"
+        android:label="@string/menu_emapa"
+        tools:layout="@layout/fragment_web_view">
+        <argument
+            android:name="url"
+            android:defaultValue="https://pruszczgdanski.e-mapa.net/"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_geoportal"
+        android:name="com.mrozeka.naszdom.ui.webview.WebViewFragment"
+        android:label="@string/menu_geoportal"
+        tools:layout="@layout/fragment_web_view">
+        <argument
+            android:name="url"
+            android:defaultValue="https://geoportal360.pl/map/#l:54.26958,18.68308,18;p:MjIwNDA0XzIuMDAxMy5BUl8zLjIyMy8yNA=="
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_z500"
+        android:name="com.mrozeka.naszdom.ui.webview.WebViewFragment"
+        android:label="@string/menu_z500"
+        tools:layout="@layout/fragment_web_view">
+        <argument
+            android:name="url"
+            android:defaultValue="https://z500.pl/domy/szukaj/pow-od-100/pow-do-140/z-poddaszem/pietrowy/2-spadowy/kat-dachu-od-45/kat-dachu-do-45.html"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_extra_dom"
+        android:name="com.mrozeka.naszdom.ui.webview.WebViewFragment"
+        android:label="@string/menu_extra_dom"
+        tools:layout="@layout/fragment_web_view">
+        <argument
+            android:name="url"
+            android:defaultValue="https://www.extradom.pl/projekty-domow?filter[usableAreaBetween100and120m]=1&amp;amp;filter[usableAreaBetween120and160m]=1&amp;amp;filter[usableAttic]=1&amp;amp;filter[atticToAdapt]=1&amp;amp;filter[multiStoryBuilding]=1&amp;amp;filter[gableRoof]=1&amp;amp;filter[roofSlope][from]=45&amp;amp;filter[roofSlope][to]=45"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_archon"
+        android:name="com.mrozeka.naszdom.ui.webview.WebViewFragment"
+        android:label="@string/menu_archon"
+        tools:layout="@layout/fragment_web_view">
+        <argument
+            android:name="url"
+            android:defaultValue="https://www.archon.pl/projekty-domow/filtr/projekty-domow-jednorodzinnych/4509?utf8=%E2%9C%93&amp;amp;view=&amp;amp;p%5Bsort%5D=bd&amp;amp;p%5Bhaf%5D=100&amp;amp;p%5Bhat%5D=150&amp;amp;p%5Bfn%5D%5B%5D=1&amp;amp;p%5Bfn%5D%5B%5D=2&amp;amp;p%5Bfn%5D%5B%5D=3&amp;amp;p%5Bfn%5D%5B%5D=&amp;amp;p%5Bata%5D%5B%5D=1&amp;amp;p%5Bata%5D%5B%5D=&amp;amp;p%5Bhb%5D%5B%5D=0&amp;amp;p%5Bhb%5D%5B%5D=&amp;amp;p%5Bsr%5D%5B%5D=0&amp;amp;p%5Bsr%5D%5B%5D=&amp;amp;p%5Brfe%5D%5B%5D=&amp;amp;p%5Bhg%5D%5B%5D=&amp;amp;p%5Brn%5D%5B%5D=&amp;amp;p%5Bbat%5D=&amp;amp;p%5Bpsx%5D=&amp;amp;p%5Bpsy%5D="
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_archeton"
+        android:name="com.mrozeka.naszdom.ui.webview.WebViewFragment"
+        android:label="@string/menu_archeton"
+        tools:layout="@layout/fragment_web_view">
+        <argument
+            android:name="url"
+            android:defaultValue="  https://archeton.pl/szukaj?areafrom=100&amp;amp;areato=150&amp;amp;dach=DACH+DWUSPADOWY&amp;amp;katdachfrom=45&amp;amp;katdachto=45&amp;amp;budynek=DOM+JEDNORODZINNY&amp;amp;kondygnacje=dom+parterowy+z+u%C5%BCytkowym+poddaszem%7Cdom+pi%C4%99trowy&amp;amp;piwnica=brak+podpiwniczenia"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_murator"
+        android:name="com.mrozeka.naszdom.ui.webview.WebViewFragment"
+        android:label="@string/menu_murator"
+        tools:layout="@layout/fragment_web_view">
+        <argument
+            android:name="url"
+            android:defaultValue="https://projekty.muratordom.pl/search_results.htm?v=1&amp;q=&amp;t=1&amp;c=&amp;kdg=2&amp;kdg=3&amp;kdg=4&amp;sd=&amp;gd=&amp;wef_0=&amp;wef_1=&amp;web_0=&amp;web_1=&amp;p_0=100&amp;p_1=150&amp;pz_0=&amp;pz_1=&amp;knd_0=45&amp;knd_1=45&amp;kd=2&amp;wk_0=&amp;wk_1=&amp;wo_0=&amp;wo_1=&amp;wsk_0=&amp;wsk_1=&amp;k_0=&amp;k_1=200000"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_mpzp"
+        android:name="com.mrozeka.naszdom.ui.webview.WebViewFragment"
+        android:label="@string/menu_mpzp"
+        tools:layout="@layout/fragment_web_view">
+        <argument
+            android:name="url"
+            android:defaultValue="http://edziennik.gdansk.uw.gov.pl/eli/POL_WOJ_PM/2023/1489/ogl/pol/pdf"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_land_register"
+        android:name="com.mrozeka.naszdom.ui.webview.WebViewFragment"
+        android:label="@string/menu_land_register"
+        tools:layout="@layout/fragment_web_view">
+        <argument
+            android:name="url"
+            android:defaultValue="https://przegladarka-ekw.ms.gov.pl/eukw_prz/KsiegiWieczyste/pokazWydruk"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_przytulny3"
+        android:name="com.mrozeka.naszdom.ui.homeproject.HomeProjectFragment"
+        android:label="@string/menu_przytulny3"
+        tools:layout="@layout/fragment_home_project">
+        <argument
+            android:name="url"
+            android:defaultValue="https://projektyzwizja.pl/projekty-domow/przytulny-3"
+            app:argType="string" />
+        <argument
+            android:name="tags"
+            android:defaultValue="114,20m2;45°;433tyś;21,55 x 17,15 m"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_zimmermannhaus"
+        android:name="com.mrozeka.naszdom.ui.homeproject.HomeProjectFragment"
+        android:label="@string/menu_zimmermannhaus"
+        tools:layout="@layout/fragment_home_project">
+        <argument
+            android:name="url"
+            android:defaultValue="https://zimmermann-haus.com.pl/dom-klasyczny-xl-130m2/"
+            app:argType="string" />
+        <argument
+            android:name="tags"
+            android:defaultValue="130m2;45°?;501tyś"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_samborrex"
+        android:name="com.mrozeka.naszdom.ui.homeproject.HomeProjectFragment"
+        android:label="@string/menu_samborrex"
+        tools:layout="@layout/fragment_home_project">
+        <argument
+            android:name="url"
+            android:defaultValue="https://projekty.muratordom.pl/projekt-sambor-rex-1216-an1216-17216"
+            app:argType="string" />
+        <argument
+            android:name="tags"
+            android:defaultValue="116,3m2;45°;?tyś"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_contacts"
+        android:name="com.mrozeka.naszdom.ui.contacts.ContactsFragment"
+        android:label="@string/menu_contacts"
+        tools:layout="@layout/fragment_contacts" />
+
+    <fragment
+        android:id="@+id/nav_notes"
+        android:name="com.mrozeka.naszdom.ui.notes.NotesFragment"
+        android:label="@string/menu_notes"
+        tools:layout="@layout/fragment_notes" />
+
+</navigation>
