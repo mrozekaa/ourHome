@@ -15,7 +15,7 @@ class HomeViewModel(private val pref: PrefRepository, private val fir: FirReposi
     fun fillView() {
         val homeId = pref.getHomeId()
         if (pref.getHomeId().isEmpty()) {
-            _state.value = State.ShowHomeIdDialog("Podaj unikalne id twojego domu :)", "OK")
+            _state.value = State.ShowHomeIdDialog("Podaj unikalne id twojego domu :)(12345 dla testowego)", "OK")
         } else {
             fir.getHouseById(homeId, { house ->
                 if (house != null) {
