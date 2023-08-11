@@ -2,18 +2,14 @@ package com.mrozeka.naszdom
 
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
-import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.navigation.NavigationView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
+import com.google.android.material.navigation.NavigationView
 import com.mrozeka.naszdom.databinding.ActivityMainBinding
 import com.mrozeka.naszdom.helper.PermissionHelper
 
@@ -27,7 +23,6 @@ class MainActivity : AppCompatActivity(){
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setSupportActionBar(binding.appBarMain.toolbar)
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
@@ -44,11 +39,9 @@ class MainActivity : AppCompatActivity(){
         if (!PermissionHelper.isCallPermissionGranted((this))) {
             PermissionHelper.requestCallPermission(this)
         }
-
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)

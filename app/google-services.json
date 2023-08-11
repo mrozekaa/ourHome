@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "668961875879",
+    "project_id": "ourhome-ae555",
+    "storage_bucket": "ourhome-ae555.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:668961875879:android:003e020e85324b96dd7882",
+        "android_client_info": {
+          "package_name": "com.mrozeka.naszdom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "668961875879-1gel2ed0pcrb3hq7gjnd0c2tf7t1f4si.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCU0HDLlH_o6D0wQC08RiP-AwqwOXk-9GE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "668961875879-1gel2ed0pcrb3hq7gjnd0c2tf7t1f4si.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

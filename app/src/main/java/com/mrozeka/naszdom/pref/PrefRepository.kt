@@ -61,6 +61,11 @@ class PrefRepository(context: Context) {
 
     fun getNotes(): Array<Note>? = Gson().fromJson(PREF_NOTES.getString(), Array<Note>::class.java)
 
+    fun getHomeId():String = PREF_HOME_ID.getString()
+    fun setHomeId(id: String){
+        PREF_HOME_ID.put(id)
+    }
+
     fun clearData() {
         editor.clear()
         editor.commit()
