@@ -17,6 +17,8 @@ class FirRepository {
             .addOnSuccessListener { result ->
                 if (result.exists()) {
                     onSuccess(result.toObject(House::class.java))
+                }else{
+                    onError(java.lang.Exception("Dom nie istnieje"))
                 }
             }
             .addOnFailureListener { exception ->

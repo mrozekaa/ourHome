@@ -15,7 +15,10 @@ class HomeViewModel(private val pref: PrefRepository, private val fir: FirReposi
     fun fillView() {
         val homeId = pref.getHomeId()
         if (pref.getHomeId().isEmpty()) {
-            _state.value = State.ShowHomeIdDialog("Podaj unikalne id twojego domu :)(12345 dla testowego)", "OK")
+            _state.value = State.ShowHomeIdDialog(
+                "Podaj unikalne id twojego domu :)(12345 dla testowego)",
+                "OK"
+            )
         } else {
             fir.getHouseById(homeId, { house ->
                 if (house != null) {
@@ -30,10 +33,24 @@ class HomeViewModel(private val pref: PrefRepository, private val fir: FirReposi
     }
 
     fun checkAndSaveHomeId(id: String) {
-        pref.setHomeId(id)
-        fillView()
+        fir.getHouseById(id, { house ->
+            if (house != null) {
+                pref.setHomeId(id)
+                _state.value = State.FillView(house)
+            } else {
+                _state.value = State.OnError("Dom nie znaleziony")
+            }
+        }, {
+            _state.value = State.OnError("Firebase error")
+        })
     }
 
+    fun onErrorClosed(){
+        _state.value = State.ShowHomeIdDialog(
+            "Podaj unikalne id twojego domu :)(12345 dla testowego)",
+            "OK"
+        )
+    }
     sealed class State {
         data class ShowHomeIdDialog(val title: String, val buttonTitle: String) : State()
         data class FillView(val house: House) : State()

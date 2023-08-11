@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
 
         homeViewModel.state.observe(viewLifecycleOwner) {
           when(it){
-              is HomeViewModel.State.ShowHomeIdDialog ->{ DialogHelper.withEditText(requireContext(),
+              is HomeViewModel.State.ShowHomeIdDialog ->{ DialogHelper.withForceEditText(requireContext(),
                   layoutInflater, it.title, it.buttonTitle){id->
                   homeViewModel.checkAndSaveHomeId(id)
               }}
@@ -41,7 +41,9 @@ class HomeFragment : Fragment() {
                   binding.textHome.text = it.house.title
               }
               is HomeViewModel.State.OnError -> {
-                  DialogHelper.withError(requireContext(), layoutInflater,it.msg)
+                  DialogHelper.withError(requireContext(), layoutInflater,it.msg){
+                      homeViewModel.onErrorClosed()
+                  }
               }
               else -> {}
           }

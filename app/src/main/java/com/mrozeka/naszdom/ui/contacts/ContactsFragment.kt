@@ -15,10 +15,10 @@ import com.mrozeka.naszdom.helper.PermissionHelper
 import com.mrozeka.naszdom.helper.safeLastIndex
 import com.mrozeka.naszdom.pref.PrefRepository
 import com.mrozeka.naszdom.ui.contacts.ContactsViewModel.State.FillView
-import com.mrozeka.naszdom.ui.contacts.ContactsViewModel.State.ShowAddContactDialog
 import com.mrozeka.naszdom.ui.contacts.ContactsViewModel.State.MakeACall
 import com.mrozeka.naszdom.ui.contacts.ContactsViewModel.State.OnError
 import com.mrozeka.naszdom.ui.contacts.ContactsViewModel.State.RefreshView
+import com.mrozeka.naszdom.ui.contacts.ContactsViewModel.State.ShowAddContactDialog
 
 open class ContactsFragment : Fragment() {
 
@@ -44,14 +44,15 @@ open class ContactsFragment : Fragment() {
                     val arrayAdapter = ContactAdapter(it.contacts) { contact ->
                         contactsViewModel.onContactClicked(
                             PermissionHelper.isCallPermissionGranted(requireContext()),
-                            contact)
+                            contact
+                        )
                     }
                     contactList.layoutManager = LinearLayoutManager(requireContext())
                     contactList.adapter = arrayAdapter
                 }
 
                 is OnError -> {
-                    DialogHelper.withError(requireContext(), layoutInflater, it.msg)
+                    DialogHelper.withError(requireContext(), layoutInflater, it.msg) {}
                 }
 
                 is MakeACall -> {
@@ -65,11 +66,13 @@ open class ContactsFragment : Fragment() {
                 ) { et1, et2 ->
                     contactsViewModel.onSaveContact(et1, et2)
                 }
-                is RefreshView ->{
+
+                is RefreshView -> {
                     val adapter = (binding.contactListView.adapter as ContactAdapter)
                     adapter.dataSet += it.contact
                     adapter.notifyItemInserted(adapter.dataSet.safeLastIndex())
                 }
+
                 else -> {}
             }
         }
