@@ -2,8 +2,6 @@
     <string name="app_name">NaszDom</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">ul. Tęczowa (ob: 0013, dz: 223/24)</string>
-    <string name="nav_header_subtitle">KW GD1G/00238317/5, ter: 220404_2</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 

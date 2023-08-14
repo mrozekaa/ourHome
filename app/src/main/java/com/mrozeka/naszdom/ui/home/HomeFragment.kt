@@ -6,6 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
+import com.mrozeka.naszdom.R
 import com.mrozeka.naszdom.databinding.FragmentHomeBinding
 import com.mrozeka.naszdom.firebase.FirRepository
 import com.mrozeka.naszdom.helper.DialogHelper

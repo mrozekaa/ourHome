@@ -8,7 +8,8 @@ import com.mrozeka.naszdom.ui.notes.Note
 
 class PrefRepository(context: Context) {
 
-    private val pref: SharedPreferences = context.getSharedPreferences("PREFERENCES_NAME", Context.MODE_PRIVATE)
+    private val pref: SharedPreferences =
+        context.getSharedPreferences("PREFERENCES_NAME", Context.MODE_PRIVATE)
 
     private val editor = pref.edit()
 
@@ -39,7 +40,7 @@ class PrefRepository(context: Context) {
 
     fun setContact(contact: Contact) {
         var contacts = getContacts()
-        if(contacts.isNullOrEmpty()){
+        if (contacts.isNullOrEmpty()) {
             contacts = emptyArray()
         }
         val contactsM = contacts.toMutableList()
@@ -47,11 +48,12 @@ class PrefRepository(context: Context) {
         PREF_CONTACTS.put(gson.toJson(contactsM))
     }
 
-    fun getContacts(): Array<Contact>? = Gson().fromJson(PREF_CONTACTS.getString(), Array<Contact>::class.java)
+    fun getContacts(): Array<Contact>? =
+        Gson().fromJson(PREF_CONTACTS.getString(), Array<Contact>::class.java)
 
     fun setNote(note: Note) {
         var notes = getNotes()
-        if(notes.isNullOrEmpty()){
+        if (notes.isNullOrEmpty()) {
             notes = emptyArray()
         }
         val contactsM = notes.toMutableList()
@@ -61,9 +63,19 @@ class PrefRepository(context: Context) {
 
     fun getNotes(): Array<Note>? = Gson().fromJson(PREF_NOTES.getString(), Array<Note>::class.java)
 
-    fun getHomeId():String = PREF_HOME_ID.getString()
-    fun setHomeId(id: String){
+    fun getHomeId(): String = PREF_HOME_ID.getString()
+    fun setHomeId(id: String) {
         PREF_HOME_ID.put(id)
+    }
+
+    fun getHomeTitle(): String = PREF_HOME_TITLE.getString()
+    fun setHomeTitle(id: String) {
+        PREF_HOME_TITLE.put(id)
+    }
+
+    fun getHomeSubtitle(): String = PREF_HOME_SUBTITLE.getString()
+    fun setHomeSubtitle(id: String) {
+        PREF_HOME_SUBTITLE.put(id)
     }
 
     fun clearData() {

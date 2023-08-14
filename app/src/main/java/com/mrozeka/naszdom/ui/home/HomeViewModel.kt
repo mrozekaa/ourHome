@@ -35,7 +35,11 @@ class HomeViewModel(private val pref: PrefRepository, private val fir: FirReposi
     fun checkAndSaveHomeId(id: String) {
         fir.getHouseById(id, { house ->
             if (house != null) {
-                pref.setHomeId(id)
+                pref.apply {
+                    setHomeId(id)
+                    setHomeTitle(house.adress)
+                    setHomeSubtitle(house.kw)
+                }
                 _state.value = State.FillView(house)
             } else {
                 _state.value = State.OnError("Dom nie znaleziony")
