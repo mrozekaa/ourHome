@@ -9,7 +9,15 @@
         android:id="@+id/nav_home"
         android:name="com.mrozeka.naszdom.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_WebViewFragment"
+            app:destination="@id/nav_webview" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_webview"
+        android:name="com.mrozeka.naszdom.ui.webview.WebViewFragment"
+        tools:layout="@layout/fragment_web_view"/>
 
     <fragment
         android:id="@+id/nav_emapa"

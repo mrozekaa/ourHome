@@ -13,6 +13,8 @@
     <string name="menu_group_project">Projektanci</string>
     <string name="menu_group_else">Pozostałe</string>
 
+    <string name="fragment_home_cost_title">Wyceny</string>
+
     <string name="menu_home">Home</string>
 
     <string name="menu_emapa">E-Mapa</string>

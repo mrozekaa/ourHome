@@ -8,11 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.mrozeka.naszdom.R
 import com.mrozeka.naszdom.databinding.FragmentHomeBinding
 import com.mrozeka.naszdom.firebase.FirRepository
 import com.mrozeka.naszdom.helper.DialogHelper
 import com.mrozeka.naszdom.pref.PrefRepository
+import com.mrozeka.naszdom.ui.notes.NoteAdapter
 
 class HomeFragment : Fragment() {
 
@@ -42,6 +44,15 @@ class HomeFragment : Fragment() {
               }}
               is HomeViewModel.State.FillView ->{
                   binding.textHome.text = it.house.title
+                  val homeList = binding.homeListView
+                  val arrayAdapter = HomeAdapter(it.house.getCostList()) { project ->
+                      val args = Bundle()
+                      args.putString("url", project.url)
+                      findNavController().navigate(R.id.action_homeFragment_to_WebViewFragment, args)
+                  }
+                  homeList.layoutManager = LinearLayoutManager(requireContext())
+                  homeList.adapter = arrayAdapter
+
               }
               is HomeViewModel.State.OnError -> {
                   DialogHelper.withError(requireContext(), layoutInflater,it.msg){

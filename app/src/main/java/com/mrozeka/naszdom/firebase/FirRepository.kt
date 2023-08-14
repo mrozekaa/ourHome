@@ -2,6 +2,7 @@ package com.mrozeka.naszdom.firebase
 
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.mrozeka.naszdom.firebase.models.House
 
 class FirRepository {
     private val db = Firebase.firestore

@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.mrozeka.naszdom.firebase.FirRepository
-import com.mrozeka.naszdom.firebase.House
+import com.mrozeka.naszdom.firebase.models.House
 import com.mrozeka.naszdom.pref.PrefRepository
 
 class HomeViewModel(private val pref: PrefRepository, private val fir: FirRepository) :
