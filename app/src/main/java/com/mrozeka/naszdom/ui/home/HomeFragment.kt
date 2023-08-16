@@ -37,30 +37,40 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         homeViewModel.state.observe(viewLifecycleOwner) {
-          when(it){
-              is HomeViewModel.State.ShowHomeIdDialog ->{ DialogHelper.withForceEditText(requireContext(),
-                  layoutInflater, it.title, it.buttonTitle){id->
-                  homeViewModel.checkAndSaveHomeId(id)
-              }}
-              is HomeViewModel.State.FillView ->{
-                  binding.textHome.text = it.house.title
-                  val homeList = binding.homeListView
-                  val arrayAdapter = HomeAdapter(it.house.getCostList()) { project ->
-                      val args = Bundle()
-                      args.putString("url", project.url)
-                      findNavController().navigate(R.id.action_homeFragment_to_WebViewFragment, args)
-                  }
-                  homeList.layoutManager = LinearLayoutManager(requireContext())
-                  homeList.adapter = arrayAdapter
+            when (it) {
+                is HomeViewModel.State.ShowHomeIdDialog -> {
+                    DialogHelper.withForceEditText(
+                        requireContext(),
+                        layoutInflater, it.title, it.buttonTitle
+                    ) { id ->
+                        homeViewModel.checkAndSaveHomeId(id)
+                    }
+                }
 
-              }
-              is HomeViewModel.State.OnError -> {
-                  DialogHelper.withError(requireContext(), layoutInflater,it.msg){
-                      homeViewModel.onErrorClosed()
-                  }
-              }
-              else -> {}
-          }
+                is HomeViewModel.State.FillView -> {
+                    binding.textHome.text = it.house.title
+                    val homeList = binding.homeListView
+                    val arrayAdapter = HomeAdapter(it.house.getCostList()) { project ->
+                        val args = Bundle()
+                        args.putString("url", project.url)
+                        findNavController().navigate(
+                            R.id.action_homeFragment_to_WebViewFragment,
+                            args
+                        )
+                    }
+                    homeList.layoutManager = LinearLayoutManager(requireContext())
+                    homeList.adapter = arrayAdapter
+
+                }
+
+                is HomeViewModel.State.OnError -> {
+                    DialogHelper.withError(requireContext(), layoutInflater, it.msg) {
+                        homeViewModel.onErrorClosed()
+                    }
+                }
+
+                else -> {}
+            }
         }
         homeViewModel.fillView()
         return root
